@@ -199,7 +199,18 @@
 		  }
 		});
 		
-
+		$('.fh5co-nav-inner ul li a').click(function() {
+			var activeId = $(this).attr('href');
+			var active = $('#' + activeId);
+			console.log(active.offset());
+			var offset = active.offset().top - 350;
+			if(activeId == 'whower') {
+				offset -= 100;
+			}
+			$('html, body, .content').animate({scrollTop: offset}, 300);
+			$('.js-nav-toggle').click();
+			return false;
+		});
 
 	});
 
