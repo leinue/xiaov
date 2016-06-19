@@ -255,6 +255,8 @@
 			height: $('.carousel-inner').find('.item:nth-child(1)').find('img.slide-image').height()
 		});
 
+		$('#second').css('height', $('#first').height());
+
 	});
 
 })();
