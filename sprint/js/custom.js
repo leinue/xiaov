@@ -212,6 +212,49 @@
 			return false;
 		});
 
+		var slideURL = 'images/hero_bg.jpg';
+		var slideIsFirst = true;
+
+		setInterval(function() {
+
+			var title = '90后，就该不一样';
+
+			if(slideIsFirst) {
+				slideURL = 'images/hero_bg.jpg';
+				slideIsFirst = false;
+				title = '我们的使命：让每一个创意成为现实';
+			}else {
+				slideURL = 'images/project_5.jpg';
+				slideIsFirst = true;
+				title = '90后，就该不一样';
+			}
+
+			// $('#fh5co-header').fadeOut(100, function() {
+			// 	$('#fh5co-header').css({
+			// 		'background-image': 'url(' + slideURL + ')' 
+			// 	}).fadeIn(500);
+			// 	$('#intro').html(title);				
+			// });
+
+			// $('#fh5co-header').animate({
+			// 	'background-position': - $(document).width()
+			// }, 500).animate(function() {
+			// 	$(this).css({
+			// 		'background-position': '0',
+			// 		'background-image': 'url(' + slideURL + ')'
+			// 	});
+			// });
+
+		}, 3000);
+
+		$('.slide-image').css({
+			// 'max-height': $('.carousel-caption').height()
+		});
+
+		$('.carousel-inner').find('.item:nth-child(2)').find('img.slide-image').css({
+			height: $('.carousel-inner').find('.item:nth-child(1)').find('img.slide-image').height()
+		});
+
 	});
 
 })();
